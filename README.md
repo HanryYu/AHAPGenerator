@@ -10,3 +10,5 @@ pip install -r requirements.txt
 python main.py
 
 ```
+
+I use Python 3.10.14
