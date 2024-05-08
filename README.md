@@ -11,4 +11,4 @@ python main.py
 
 ```
 
-I use Python 3.10.14
+Tested on Python 3.10.14
