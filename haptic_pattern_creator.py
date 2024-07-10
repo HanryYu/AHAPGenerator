@@ -18,7 +18,7 @@ class AudioHapticPattern:
                 "Description": "Generated AHAP file from audio analysis.",
                 "Author": "Ryan Du"
             },
-            "Events": []
+            "Pattern": []
         }
 
 
@@ -26,23 +26,23 @@ class AudioHapticPattern:
     def add_haptic_event(self, event_type, timestamp, params, duration=None, waveform_path=None):
         event = {
             "Event": {
-                "Timestamp": timestamp,
-                "Type": event_type,
-                "Parameters": params
+                "Time": timestamp,
+                "EventType": event_type,
+                "EventParameters": params
             }
         }
         if duration is not None:
-            event["Event"]["Duration"] = duration
+            event["Event"]["EventDuration"] = duration
         if waveform_path is not None:
-            event["Event"]["Waveform"] = waveform_path
-        self.pattern_data["Events"].append(event)
+            event["Event"]["EventWaveformPath"] = waveform_path
+        self.pattern_data["Pattern"].append(event)
 
 
 
     def add_transient_haptic(self, timestamp, intensity=0.5, sharpness=0.5):
         params = [
-            {"ID": "Intensity", "Value": intensity},
-            {"ID": "Sharpness", "Value": sharpness}
+            {"ParameterID": "HapticIntensity", "ParameterValue": intensity},
+            {"ParameterID": "HapticSharpness", "ParameterValue": sharpness}
         ]
         self.add_haptic_event("HapticTransient", timestamp, params)
 
@@ -50,8 +50,8 @@ class AudioHapticPattern:
 
     def add_continuous_haptic(self, timestamp, duration=1, intensity=0.5, sharpness=0.5):
         params = [
-            {"ID": "Intensity", "Value": intensity},
-            {"ID": "Sharpness", "Value": sharpness}
+            {"ParameterID": "HapticIntensity", "ParameterValue": intensity},
+            {"ParameterID": "HapticSharpness", "ParameterValue": sharpness}
         ]
         self.add_haptic_event("HapticContinuous", timestamp, params, duration=duration)
 
@@ -65,11 +65,11 @@ class AudioHapticPattern:
         curve = {
             "ControlCurve": {
                 "ParameterID": param_id,
-                "StartTime": start_time,
-                "ControlPoints": control_points
+                "Time": start_time,
+                "ParameterCurveControlPoints": control_points
             }
         }
-        self.pattern_data["Events"].append(curve)
+        self.pattern_data["Pattern"].append(curve)
 
 
 
