@@ -3,8 +3,8 @@
     "Metadata": {
         "Project": "Basis",
         "CreationDate": "2024-07-11 02:22:43.043498",
-        "Description": "Generated AHAP file from audio analysis.",
-        "Author": "Ryan Du"
+        "Description": "Generated AHAP file from wav. Github: AHAPGenerator",
+        "Author": "Ryan Han"
     },
     "Pattern": [
         {

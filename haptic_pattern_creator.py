@@ -15,8 +15,8 @@ class AudioHapticPattern:
             "Metadata": {
                 "Project": "Basis",
                 "CreationDate": str(datetime.datetime.now()),
-                "Description": "Generated AHAP file from audio analysis.",
-                "Author": "Ryan Du"
+                "Description": "Generated AHAP file from wav. Github: AHAPGenerator",
+                "Author": "Ryan Han"
             },
             "Pattern": []
         }
